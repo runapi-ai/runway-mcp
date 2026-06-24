@@ -1,7 +1,7 @@
 {
   "name": "@runapi.ai/runway-mcp",
-  "version": "0.1.0",
-  "description": "RunAPI MCP server for one model line: create tasks, poll status, and check pricing with one API key.",
+  "version": "0.1.1",
+  "description": "Runway MCP server for RunAPI — create Runway AI tasks (extend video, text to video), poll status, and check pricing across 1 model with one API key.",
   "type": "module",
   "main": "dist/src/index.js",
   "bin": {
@@ -27,7 +27,15 @@
     "runapi",
     "mcp",
     "model-context-protocol",
-    "ai"
+    "ai",
+    "runway",
+    "runway-mcp",
+    "runway-ai",
+    "runway-api",
+    "video-generation",
+    "ai-video",
+    "extend-video",
+    "text-to-video"
   ],
   "author": "RunAPI",
   "license": "Apache-2.0",
