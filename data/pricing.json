@@ -1,0 +1,32 @@
+{
+  "endpoints": {
+    "runway/extend_video": {
+      "unit_price_cents": 12,
+      "billing_config": {
+        "key": "output_resolution",
+        "overrides": {
+          "720p": 12,
+          "1080p": 30
+        }
+      }
+    },
+    "runway/text_to_video": {
+      "unit_price_cents": 30,
+      "billing_config": {
+        "keys": [
+          "duration_seconds",
+          "output_resolution"
+        ],
+        "matrix": {
+          "5": {
+            "720p": 12,
+            "1080p": 30
+          },
+          "10": {
+            "720p": 30
+          }
+        }
+      }
+    }
+  }
+}

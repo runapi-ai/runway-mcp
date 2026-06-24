@@ -1,0 +1,69 @@
+{
+  "catalog_models": [
+    "runway"
+  ],
+  "actions": {
+    "runway/extend-video": {
+      "model": "Runway",
+      "endpoint": "extend_video",
+      "models": [
+        "runway"
+      ],
+      "fields_by_model": {
+        "runway": {
+          "prompt": {
+            "required": true
+          },
+          "source_task_id": {
+            "required": true
+          },
+          "output_resolution": {
+            "enum": [
+              "720p",
+              "1080p"
+            ],
+            "required": true
+          }
+        }
+      }
+    },
+    "runway/text-to-video": {
+      "model": "Runway",
+      "endpoint": "text_to_video",
+      "models": [
+        "runway"
+      ],
+      "fields_by_model": {
+        "runway": {
+          "prompt": {
+            "required": true
+          },
+          "aspect_ratio": {
+            "enum": [
+              "16:9",
+              "9:16",
+              "1:1",
+              "4:3",
+              "3:4"
+            ]
+          },
+          "duration_seconds": {
+            "enum": [
+              5,
+              10
+            ],
+            "required": true
+          },
+          "output_resolution": {
+            "enum": [
+              "720p",
+              "1080p"
+            ],
+            "required": true
+          },
+          "first_frame_image_url": {}
+        }
+      }
+    }
+  }
+}
