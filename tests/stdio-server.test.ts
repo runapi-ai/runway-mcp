@@ -45,7 +45,7 @@ describe("runway stdio MCP server", () => {
 
     const tools = await client.listTools();
     const names = tools.tools.map((tool) => tool.name).sort();
-    expect(names).toEqual(["check_pricing","extend_video","get_task","text_to_video"]);
+    expect(names).toEqual(["check_pricing","extend_video","get_task","login","text_to_video"]);
 
     const pricing = await client.callTool({ name: "check_pricing", arguments: {} });
     const content = pricing.content?.[0];
