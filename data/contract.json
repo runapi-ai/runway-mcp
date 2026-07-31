@@ -6,23 +6,36 @@
     "runway/extend-video": {
       "model": "Runway",
       "endpoint": "extend_video",
+      "task_type": "asynchronous",
       "models": [
         "runway"
       ],
       "fields_by_model": {
         "runway": {
-          "prompt": {
-            "required": true
+          "model": {
+            "type": "string"
           },
           "source_task_id": {
+            "type": "string",
+            "required": true
+          },
+          "prompt": {
+            "type": "string",
             "required": true
           },
           "output_resolution": {
+            "type": "string",
             "enum": [
               "720p",
               "1080p"
             ],
             "required": true
+          },
+          "watermark": {
+            "type": "string"
+          },
+          "callback_url": {
+            "type": "string"
           }
         }
       }
@@ -30,15 +43,40 @@
     "runway/text-to-video": {
       "model": "Runway",
       "endpoint": "text_to_video",
+      "task_type": "asynchronous",
       "models": [
         "runway"
       ],
       "fields_by_model": {
         "runway": {
+          "model": {
+            "type": "string"
+          },
           "prompt": {
+            "type": "string",
             "required": true
           },
+          "duration_seconds": {
+            "type": "integer",
+            "enum": [
+              5,
+              10
+            ],
+            "required": true
+          },
+          "output_resolution": {
+            "type": "string",
+            "enum": [
+              "720p",
+              "1080p"
+            ],
+            "required": true
+          },
+          "first_frame_image_url": {
+            "type": "string"
+          },
           "aspect_ratio": {
+            "type": "string",
             "enum": [
               "16:9",
               "9:16",
@@ -47,21 +85,12 @@
               "3:4"
             ]
           },
-          "duration_seconds": {
-            "enum": [
-              5,
-              10
-            ],
-            "required": true
+          "watermark": {
+            "type": "string"
           },
-          "output_resolution": {
-            "enum": [
-              "720p",
-              "1080p"
-            ],
-            "required": true
-          },
-          "first_frame_image_url": {}
+          "callback_url": {
+            "type": "string"
+          }
         }
       }
     }
